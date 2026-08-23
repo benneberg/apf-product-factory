@@ -1,0 +1,240 @@
+AI Product Factory (APF)
+
+Final Optimized Product Specification v2.1
+
+Version: 2.1
+Status: Production-Ready Blueprint
+Positioning: The Publisher, Not the Author
+Tagline: Turn any idea, repo, or unfinished project into a market-ready, sellable product in under 30 minutes.
+
+Executive Summary
+
+Core Thesis:
+Everyone builds AI that writes code. Nobody builds AI that turns that code into businesses. APF is the missing Productization Operating System — the publisher layer that validates, positions, prices, packages, and launches.
+
+One-Line Pitch:
+Upload a repo or idea → Get a complete, revenue-ready product package.
+
+Key Differentiators:
+
+Devil’s Advocate Validation Agent (early kill/pivot)
+Artifact Dependency Graph (composable, stale-aware intelligence)
+Feature-to-Benefit Translation
+Mobile-first review & approval
+Model-agnostic routing
+Vision & Principles
+
+Vision
+APF turns builders into founders by automating everything between “I shipped code” and “I’m earning revenue.”
+
+Core Principles
+Outcome Obsessed — Optimize for revenue, not code elegance.
+Publisher Mindset — Decide, refine, package (never just generate).
+Devil’s Advocate First — Kill weak ideas early.
+Artifact-First Architecture — Versioned, dependency-aware, HITL.
+Mobile-First Decisioning — Heavy input on desktop, strategic review on mobile.
+Compounding Intelligence — Portfolio-level learning.
+Target Users
+
+Primary: Indie hackers, solo AI builders, open-source maintainers.
+Secondary: Agencies, product teams, startup studios.
+Agents (V1 Core Set)
+
+Validation Agent (Devil’s Advocate) — Scores & pivots.
+Technical Context Agent — Lightweight code analysis.
+Feature-to-Benefit Mapper — Tech → Outcomes.
+Market Intelligence Agent — Competitors, demand.
+Product Strategist — Positioning, concept.
+Naming Agent — Names, taglines.
+Pricing Agent — Tiers, bundling.
+Documentation Agent — README, guides.
+Sales Page Agent — Landing copy, objections.
+Asset Agent — Visual prompts.
+Distribution Agent — Launch content per channel.
+Portfolio Manager (V2) — Cross-project insights.
+Scoring System
+
+Every project gets:
+
+Market Demand, Competition, Build Effort, Support Burden, Distribution Fit, Revenue Potential.
+Overall Productization Score (0-100).
+<60 → Strong pivot recommendations.
+Golden Path Workflow (V1)
+
+Input — npx apf push, GitHub webhook [APF-Launch], or manual idea.
+Validation — Scores + pivots (mobile notification).
+User Decisions — Audience, name, pricing tweaks.
+Artifact Graph Execution — Parallel/dependent agent runs.
+HITL Review — Accept / Reject+Regenerate / Edit.
+Export — Single ZIP launch package (ready for Gumroad).
+ZIP Contents:
+
+README.md
+landing-page.md
+pricing.json
+launch tweets/threads
+asset prompts + generated images
+strategy docs
+Productization Scorecard
+Artifact Dependency Graph
+
+Directed graph of versioned artifacts.
+Automatic stale flagging on upstream changes.
+Visual graph in UI.
+Supports surgical regeneration.
+Schema (key fields):
+
+id, project_id, type, version, content (JSONB), score, is_stale, depends_on[], agent_id.
+Technical Architecture
+
+Frontend: Next.js 14 + Tailwind + shadcn/ui + PWA.
+Backend: Supabase (Postgres, Auth, Storage, Edge Functions).
+Orchestration: Inngest (durable workflows).
+LLM: Vercel AI SDK with smart routing (Groq fast, Claude strategic, etc.).
+Database: Projects, Artifacts, Agent Runs tables.
+Revenue Model
+
+Free: 3 projects/mo, watermarked.
+Pro ($29/mo): Unlimited, full features.
+Studio ($99/mo): Teams, API, white-label.
+Roadmap
+
+V1 (6-8 weeks): Golden Path + Graph + CLI + Mobile + ZIP.
+V2: Portfolio Intelligence, deeper analysis, asset gen.
+V3: Autonomous publishing.
+V4: Full autonomous factory.
+
+Success Metric: User goes from repo push to Gumroad upload in <30 min on mobile.
+
+This v2.1 is the bulletproof synthesis — ready to build.
+
+AI Product Factory (APF) - 6-Week MVP Execution Plan
+
+Goal: Ship a functional V1 that delivers the Golden Path for solo developers.
+
+Week 1: Foundation
+
+Set up Next.js + Supabase project.
+Implement Auth & basic project CRUD.
+Build CLI tool (npx apf push).
+Define Artifact schema & DB tables.
+Week 2: Validation & Analysis
+
+Implement Validation Agent (Devil’s Advocate).
+Add Technical Context & Feature-to-Benefit Mapper.
+Market Intelligence basics.
+Scoring system.
+Week 3: Core Strategy Agents
+
+Product Strategist, Naming, Pricing.
+Artifact creation & dependency tracking.
+Week 4: Packaging Agents
+
+Documentation, Sales Page, Distribution.
+Initial Artifact Graph logic (stale detection).
+Week 5: Mobile UX & HITL
+
+PWA setup with shadcn/ui.
+Artifact review UI: Accept/Reject/Edit/Regenerate.
+Visual dependency graph (simple).
+Week 6: Polish & Launch
+
+ZIP export generation.
+Push notifications.
+Polish mobile flow.
+Internal dogfooding + launch APF itself on Product Hunt.
+Milestones:
+
+End of Week 3: End-to-end Validation + Strategy.
+End of Week 6: Full Golden Path to ZIP export.
+Tech Risks & Mitigations:
+
+Use Inngest early for orchestration.
+Start with lightweight agents, expand models later.
+AI Product Factory Pitch Deck Outline
+
+Slide 1: Title
+AI Product Factory — Turn Code Into Companies
+
+Slide 2: The Problem
+Builders ship dozens of projects. Almost none make money.
+
+Slide 3: The Gap
+Cursor writes code. APF publishes products.
+
+Slide 4: Solution
+Upload repo → Validation → Strategy → Packaging → Launch-ready ZIP in <30 min.
+
+Slide 5: Demo
+Live: Analyze APF itself (or user project).
+
+Slide 6: Architecture
+Artifact Dependency Graph + Mobile-first HITL.
+
+Slide 7: Traction / Validation
+(Planned: Beta users, Productization Score examples)
+
+Slide 8: Market
+Indie hackers + AI builders market.
+
+Slide 9: Business Model
+Freemium → Pro $29/mo → Studio.
+
+Slide 10: Team / Vision
+Solo founder building the Productization OS.
+
+Slide 11: Ask
+Investment / Beta users / Feedback.
+
+APF CLI Tool Specification
+
+Command: npx apf push [options]
+
+Features:
+
+Detects repo (git), zips relevant files (exclude node_modules, etc.).
+Extracts README, package.json summary.
+Uploads to APF cloud with metadata.
+Triggers pipeline and sends mobile push.
+Options:
+
+--idea "description" for manual input.
+--github-url for remote repo.
+--dry-run for local validation.
+Authentication: Via Supabase token or GitHub.
+
+Output: Project ID + link to mobile workspace.
+Orange
+
+Listed /
+
+Loaded skill cloudflare-bundler-apps
+
+Wrote 4 files
+4
+
+Deployed
+Rollback
+
+Checked browser console 3 steps
+3
+
+Edited 2 files
+2
+
+Deployed
+Rollback
+The AI Product Factory (APF) is now live. This prototype implements the "Productization Operating System" with a focus on the publisher mindset, validation-first workflows, and artifact-based intelligence.
+
+Key Features Implemented:
+The Golden Path: A complete flow from landing page to project creation and artifact generation.
+Devil’s Advocate Agent: Dedicated UI for "kill or pivot" recommendations with a scoring system (0-100).
+Artifact Dependency Graph: Visual status of the agent pipeline (Validation, Technical, Strategy, Pricing, Sales).
+Feature-to-Benefit Translation: A component demonstrating the technical mapping of code features to market outcomes.
+CLI Simulation: A terminal-style UI on the landing page showcasing the npx apf push developer experience.
+Persistence: A Durable Object backend using SQLite to manage project state and agent artifacts.
+Technical Stack:
+Frontend: React 18 (via Babel), Tailwind CSS, Framer Motion, and Lucide Icons.
+Backend: Hono on Cloudflare Durable Objects with SQLite storage.
+Design: Modern dark-mode "SaaS" aesthetic with stone neutrals and primary blue accents.
+You can now view the application, create a project, and watch the factory pipeline analyze your product readiness.
