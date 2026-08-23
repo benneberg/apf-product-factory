@@ -78,11 +78,3 @@ export class App extends DurableObject {
     return this.app.fetch(request);
   }
 }
-
-export default {
-  async fetch(request: Request, env: any) {
-    const id = env.APP.idFromName("singleton");
-    const obj = env.APP.get(id);
-    return obj.fetch(request);
-  }
-};
