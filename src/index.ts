@@ -35,8 +35,12 @@ export class App extends DurableObject {
 
   private setupRoutes() {
     this.app.get("/api/projects", (c) => {
-      const projects = this.ctx.storage.sql.exec("SELECT * FROM projects ORDER BY created_at DESC").toArray();
-      return c.json(projects);
+      try {
+        const projects = this.ctx.storage.sql.exec("SELECT * FROM projects ORDER BY created_at DESC").toArray();
+        return c.json(projects);
+      } catch (e) {
+        return c.json([], 200);
+      }
     });
 
     this.app.post("/api/projects", async (c) => {
@@ -74,3 +78,11 @@ export class App extends DurableObject {
     return this.app.fetch(request);
   }
 }
+
+export default {
+  async fetch(request: Request, env: any) {
+    const id = env.APP.idFromName("singleton");
+    const obj = env.APP.get(id);
+    return obj.fetch(request);
+  }
+};
