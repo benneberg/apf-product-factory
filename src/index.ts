@@ -75,6 +75,7 @@ export class App extends DurableObject {
   }
 
   async fetch(request: Request) {
+    console.log("Request:", request.method, request.url);
     return this.app.fetch(request);
   }
 }
