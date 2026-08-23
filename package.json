@@ -1,0 +1,7 @@
+{
+  "name": "apf-marketing-factory",
+  "type": "module",
+  "dependencies": {
+    "hono": "^4.6.0"
+  }
+}
